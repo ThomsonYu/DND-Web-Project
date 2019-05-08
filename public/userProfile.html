@@ -1,0 +1,97 @@
+ <html lang="en">
+
+	
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/userProfile.css">
+  <head>
+    <title>User Profile</title>
+    <meta charset="utf-8">
+     
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/lobby">D&D companion</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav" id="navList">
+				<li class="nav-item">
+				  <a class="nav-link" href="/lobby">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/userProfile">Profile</a>
+				</li>
+				</li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/references" target="_blank">References</a>
+			  </li> 
+			</ul>
+		  </div> 
+			<form id="logOutBtn" class="form-inline mt-2 mt-md-0">
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>
+            </form>
+		</nav>
+	<div id="userName"><h2></h2></div>
+	<br>
+	<br>
+	<div class="container">
+		<div class = "row">
+			<div id="popUp" class="col-xs-8">
+				<h3><div id="cList" >Character List</div></h3>
+				<div>
+					<table class="table table-dark table-responsive-lg" id="characterTable">
+						  <thead class="thead-dark">
+							<tr>
+							  <th scope="col">#</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Class</th>
+							  <th scope="col">Level</th>
+							 
+							  <th scope="col">Edit</th>
+							  <th scope="col">Delete</th>
+							</tr>
+						  </thead>
+						  <tbody>
+						  </tbody>
+						</table>
+
+				</div>
+			<input id="charAddBtn" type="submit" class="btn btn-primary mb-4" value="Add new Character" onclick="popupAddCharacter()">
+			</div>
+
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-3 mx-md-5">
+				<h3><div id="pInfo">Personal Info</div></h3>
+				<div id="pTable" class = "row py-md-3 ml-3">
+					<div class="col col-th">
+						<p>First Name:</p><p id="firstName" contenteditable="true"></p></p>
+						<p>Last Name:</p><p id="lastName" contenteditable="true"></p></p>
+						<p>Email:</p><p id="email" contenteditable="true"></p></p>
+						<p>Tokens:</p><p id="tokens" contenteditable="true"></p></p>
+					</div>
+				<input id="infoEditBtn" type="submit" class="btn btn-primary mb-4" value="save Edits" onclick="saveEdits()"/>
+				</div>
+
+			</div>
+			<div class="col-xs-3 mx-md-5">
+				<h3><div id="pInfo">Password</div></h3>
+				<div id="pTable" class = "row py-md-3 ml-3">
+					<div class="col col-th">
+						<input id ="oldPass" placeholder="Old Password" type ="password">
+						<input id ="newPass" placeholder="New Password" type ="password">
+					</div>
+					<input id="passEditBtn" type="submit" class= "btn btn-primary mb-4" value="change Password" onclick="changePass()" />
+				</div>
+
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/userProfile.js"> </script>
+</body>
+</html>

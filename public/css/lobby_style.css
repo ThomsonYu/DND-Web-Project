@@ -1,0 +1,34 @@
+h3{
+	margin-top:10px;
+}
+h3 div {
+	background-color:#343A40;
+	color:white;
+	height:63px;
+	width: 329px;
+	padding-top:10px;
+	padding-left:10px;
+}
+
+body {
+	background-color: black;
+	background-image: url("../img/antique-scroll-backgrounds-wallpapers.jpg");  background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+ #createRoomOptions{
+	margin-top: 10px;
+ }
+
+#roomSearchForm{
+	padding-bottom: 10px;
+}
+
+#roomSearchQuery{
+	width: 329px;
+}
+
+#Players{
+	width: 329px;
+}

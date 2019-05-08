@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+        <title>Lobby</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/lobby_style.css">
+	</head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <!-- Brand -->
+		  <a class="navbar-brand" href="/lobby">D&D companion</a>
+		  <!-- Toggler/collapsibe Button -->
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <!-- Navbar links -->
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav" id="navList">
+			  <li class="nav-item">
+				<a class="nav-link" href="/lobby">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/userProfile">Profile</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/references" target="_blank">References</a>
+			  </li>
+			</ul>
+		  </div> 
+			<form id="logOutBtn" class="form-inline mt-2 mt-md-0">
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>
+            </form>
+		</nav>
+        <div class="container">
+            <div class = "row">
+                <div id="Rooms" class="col-xs-8 mx-md-1">
+                    <h3><div>Rooms</div></h3>
+                    <form id="roomSearchForm">
+                        <input id='roomSearchQuery' autocomplete="off" type="text" placeholder="Search for Room name/DM" onkeyup="searchRoom()">
+                    </form>
+                    <table class="table table-dark table-responsive-lg" id="roomsTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)" scope="col">#</th>
+                                <th onclick="sortTable(1)" scope="col">Name</th>
+                                <th onclick="sortTable(2)" scope="col">DM</th>
+                                <th onclick="sortTable(3)" scope="col">Players</th>
+                                <th onclick="sortTable(4)" scope="col">Privacy</th>
+                                <th scope="col">Join</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <form id='createRoomForm' action='/sessions' method="post">
+                        <input id='newRoomName' type="text" placeholder="Room name" name="name" required>
+                        <input id='playerCap' type="number" min="1" placeholder="Player Capacity" name="playerCap" required>
+                        <!-- <input id='privacy' type="checkbox" value="private" placeholder="privacy"> <span><strong>Private</strong></span> -->
+						<br>
+						<div id="createRoomOptions">
+						
+                        <input id='password' type="password" placeholder="Password" name="password">
+                        <input type="submit" class="btn-md btn-primary mb-2" value="Create Room">
+						</div>
+                    </form>
+                </div>
+                <div id="Players" class="col-xs-4 mx-md-1">
+                    <br>
+                    <table class="table table-dark  table-responsive-sm" id="memberList">
+                        <thead>
+                            <tr>
+                                <th scope="col"><h4>Users</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table class ="table" id="Online">
+                                        <thead class = "thead-light">
+                                            <tr>
+                                                <th scope="col"><h5>Online</h5></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="table table-dark" id="Offline">
+                                        <thead class = "thead-light">
+                                            <tr>
+                                                <th scope="col"><h5>Offline</h5></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src='/js/lobby_scripts.js'></script>
+    </body>
+</html>

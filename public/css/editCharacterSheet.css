@@ -1,0 +1,189 @@
+
+#savebtn {
+	text-align: right;
+}
+
+.characterSheetBody {
+	background-color: black;
+    background-image: url(../img/advanced-blank-scroll-paper-powerpoint-backgrounds.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+	background-size: cover;
+}
+
+#pageHeader{
+	color:white;
+	width: 40%;
+	padding: 10px;
+	text-align: center;
+	margin: 30px auto;
+	background-color:#343A40;
+}
+
+.formbackground {
+	padding: 10px;
+	margin: 10px;
+	background: white;
+    border: black 1px solid;
+}
+
+#characterBio {
+	margin-bottom: 20px;
+}
+
+#characterNameTitle {
+	margin-left: 20px;
+	display: inline-block;
+	vertical-align: top;
+	height: min-content;
+}
+
+#characterNameTitle span{
+	font-size: large;
+	display: block;
+}
+
+#characterOtherTitle {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.smallStatTitle {
+	display: inline-block;
+}
+
+.smallStatTitle span {
+	font-size: small;
+	display: block;
+}
+
+.smallStatTitle .smallNumberInput {
+	width: 60px;
+	display: inline-block;
+}
+
+#characterStats {
+	width: 200px;
+	display: inline-block;
+}
+
+#characterStats div {
+	border: 1px solid black;
+	text-align: center;
+	margin: 10px;
+	padding: 20px;
+}
+
+#characterStats span {
+    font-weight: bold;
+    font-size: large;
+    display: block;
+}
+#characterStats .modifier {
+	height: 40px;
+}
+
+#characterSkillsSaves {
+	min-width: 250px;
+	max-width: 300px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#characterSaves {
+	padding: 5px;
+	border: 1px solid grey;
+}
+
+#characterSavesNotes {
+	padding: 5px;
+}
+
+#characterSavesNotes textarea {
+	width: 100%;
+	height: 25%;
+}
+
+#characterSkills {
+	padding: 5px;
+	border: 1px solid grey;
+}
+
+#characterSkills ul {
+	list-style-type: none;
+}
+
+#characterSaves ul {
+	list-style-type: none;
+}
+
+.smallNumberInput {
+	width: 50px;
+	display: inline-block;
+}
+
+.skill {
+	padding-bottom: 5px
+}
+
+.skillMod {
+	display: inline-block;
+	width: 30px;
+	color: grey;
+	text-align: center;
+}
+
+.skillStat {
+	color: grey;
+}
+
+#characterGeneralInfo {
+	padding: 5px;
+	border: 1px solid grey;
+}
+
+#defensiveStats .smallStatTitle input {
+	width: 80%;
+}
+
+#armorClass {
+	text-align: center;
+}
+
+#armorClassStats {
+	padding: 5px;
+	border:1px solid grey;
+}
+
+#armorClassStats .statName {
+    font-size: large;
+    display: block;
+	text-align: center;
+}
+#armorClassStats .modifier {
+	height: 40px;
+	display: inline-block;
+	width: 30px;
+}
+
+#armorDexBonus .armorDexType {
+	font-size: small;
+}
+
+#armorClassStats .smallNumberInput {
+	margin: 5px;
+}
+
+.smallCheckBoxSpan {
+	font-size: small;
+}
+
+#notesNotes textarea {
+	height: 100%;
+}
+
+#skillsTab .formbackground {
+	vertical-align: top;
+	width: 40%;
+	display: inline-block;
+}

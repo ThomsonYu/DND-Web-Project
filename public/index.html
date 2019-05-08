@@ -1,0 +1,30 @@
+ <html lang="en">
+ 	<link rel="stylesheet" type="text/css" href="/css/loginSignup.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+	<h1>Welcome to DND!</h1>
+	<div class="container-login">
+		<br>
+		<form id="loginForm" action="/users/index" method="post">
+		<h3>Login</h3>
+		<br>
+		<label for="username">Username</label>
+      		<input type="text" name="userName" placeholder="Username"><br><br><br>
+		<label for="pass">Password</label>
+     		<input type="password" name="password" placeholder="Password" minlength="3" required><br><br><br>
+		<input id="login" type="submit" value="Login" class="btn btn-primary">
+		</form>	
+		<br><br>
+		<form id="signUpButton" action="/users/signUp" method="get">
+				<button type="submit" value="Sign up" class="btn btn-primary">Sign Up</button>
+		</form>
+	</div>
+</body>
+</html>

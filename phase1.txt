@@ -1,0 +1,54 @@
+The Login-in page for our site is index.html. Use the credentials below to login. You can also click the signup button from the login page to make a new account and enter the site.
+
+Admin
+Admin Login Credentials : 
+-Username: admin
+-Password: admin
+
+Admin Page:
+-Can search for users by username
+-Can delete users by clicking delete button beside user
+
+User
+User Login Credentials : 
+-Username: user
+-Password: user
+
+Navbar (on all user pages)
+-Home: goes to Lobby (lobby.html)
+-Profile: goes to User Profile (characterSheet.html)
+-References: opens up the D&D handbook in a new tab. Useful if you do not know the rules of D&D.
+
+Lobby Page (Lobby.html)
+This is the first page a user is sent to after logging in. From here they can do the following:
+-Search for specific rooms using the search bar underneath the Rooms heading
+-Join a room by clicking the join button on a given room
+	If the room is private then a prompt to enter a password comes up (the password for the room Potato Quest is “password”)
+	Correctly entering the password or joining a public room will send you to a room session
+-You can create a new room by filling in the fields below the room table. If you would like the room to be private, check the private field and enter a password. On creating a new room a new tab will open in that session. In the original tab the new session will be added to the room table.
+-The user table is divided into 2 sections: your friends and other users
+	If a friend is currently in a room, you can join that room by clicking the session button
+	For any user you can view their profile by clicking the profile button beside their name
+
+
+
+User Profile (characterSheet.html)
+This page is the user’s information page which includes information about their created D&D characters and personal information
+-Clicking on “Add new Character” will pop up a window which will allow you to create a new character
+-Clicking on “Delete Character” will pop a window which you can enter a character id and delete that specific character
+-Clicking the edit button on a given character opens up the in-depth character editor which has many more fields than level, name and class
+
+
+Character Sheets (editCharacterSheet.html)
+On this page you see numerous text entry fields required for making a D&D character. Complete all the fields and click the save button to create a new character.
+
+Session (session.html)
+On this page, you would play a session of D&D.
+-The character Info section has 3 tabs
+	The Character stats tab has basic information about your character
+	The Skills tab has a list of skills your character possesses 
+	The Notes tab hold miscellaneous information about your character and lore 
+-The chat section has 2 tabs
+	The first tab is the chat, which is where you can talk and type in commands such as “/r 1d20” which would roll a 20 sided dice
+	There is also a dice button which has the most common dice used in D&D, clicking on them will roll that respective die
+	The players tab is a list of the current players in the session. The host of the session can kick players from the session

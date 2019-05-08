@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+	background-image: url("../img/advanced-blank-scroll-paper-powerpoint-backgrounds.jpg");  background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#logOutBtn{
+    margin: 0;
+}
+
+h4{
+    margin: 0px auto;
+    color: white;
+}
+
+#userSearchForm{
+    border-radius: 5px;
+    width: 50%;
+    margin: 30px auto;
+}
+
+#userSearchQuery{
+    width: 100%;
+    padding: 5px;
+}
+
+.table{
+    border-radius: 5px;
+    width: 70%;
+    margin: 50px auto;
+}

@@ -1,0 +1,99 @@
+///////////LINK TO DEPLOYED SITE///////////
+https://infinite-bastion-54989.herokuapp.com
+
+///////////How to Use the App///////////
+1. To use the site, open a Chrome browser window and also an incognito Chrome browser window (To simulate 2 users)
+2. On one window, sign in as user and on the other, sign in as admin
+3. Have the user create a new session via the input fields under the session table (Room name, player capacity, and optional password)
+4. Have the admin user click the join button of the created session to enter the session
+5. Either users can use the chat to send messages or roll dice
+6. Either users can load their character information through the dropdown
+7. Either users can leave the room using the leave button. If both leave, the session will be destroyed
+8. Admin can click the 'Admin' button on the nav bar to go to the admin page to delete user from the list of users
+9. Both users should click logout to destroy the session cookie. When user logs out, the user will move to the 
+    offline section of the player list in the lobby
+
+///////////Changes///////////
+1. Admin has access to all basic features
+2. Admin can access admin page via nav bar
+3. Session character stats are now loaded from character Sheets
+
+///////////Admin///////////
+Admin Login Credentials : 
+-Username: admin
+-Password: admin
+
+Admin Page:
+-Can search for users by username
+-Can delete users by clicking delete button beside user
+
+Admin Privilege
+- Does everything a basic user can
+- Admin status can not be granted to other users
+- Admin can enter private rooms without having to enter the password
+
+///////////User///////////
+User Login Credentials : 
+-Username: user
+-Password: user
+
+Login (/index)
+- Sign in using the proper credentials mentioned above
+- If credentials are invalid, then the page just reloads
+
+Sign up (/user/signUp)
+- Enter first name, last name, username and password
+- username and password are the sign in credentials
+- username is unique
+- If entered credentials are invalid, the page reloads, otherwise it redirects to login page
+
+Logout (/users/logout)
+- User can click the logout button on the navbar which destroys the session cookie
+- Then redirects them to the login page
+
+Navbar (on all user pages)
+-Home (/lobby): goes to Lobby
+-Profile (/userProfile): goes to User Profile
+-References (/references): opens up the D&D handbook in a new tab. Useful if you do not know the rules of D&D.
+-Admin (/admin): This tab appears if the user is an admin. On this page, the admin can delete users
+
+Lobby Page (/lobby)
+This is the first page a user is sent to after logging in. From here they can do the following:
+-Search for specific rooms using the search bar underneath the Rooms heading
+-Join a room by clicking the join button on a given room
+	If the room is private then a prompt to enter a password comes up
+	Correctly entering the password or joining a public room will send you to a room session
+-You can create a new room by filling in the fields below the room table. If you would like the room to be private, 
+enter a password, otherwise leaving the password field empty will make the room pubic.
+-On creating a new room, user is redirected to new session. On the lobby page, the created room will appear for the
+other users to join
+-The user table is divided into 2 sections: online and offline users
+
+User Profile (/userProfile)
+This page is the user’s information page which includes information about their created D&D characters 
+and personal information
+-Clicking on “Add new Character” will pop up a window which will allow you to create a new character
+-After creating a new character, the user will be able to edit or delete the character
+-Clicking the edit button on a given character opens up the in-depth character editor which has 
+many more fields than level, name and class
+- User can edit first name, last name, add an email, and add tokens
+- User can also change password by giving their old password and a new password
+
+Character Sheets (/editCharacterSheet/:id)
+On this page you see numerous text entry fields required for making a D&D character. 
+Complete all the fields and click the save button to finish editing that characgter.
+After saving, the user will be redirected to the user profile page
+
+Session (/session)
+On this page, you would play a session of D&D.
+-The character Info section
+	The Character stats tab displays all the information that was saved from the edit character sheet page
+    The user can select which character information they want to display through the dropdown list
+-The chat section has 2 tabs
+	The first tab is the chat, which is where you can talk and type in commands such as “/r 1d20” which 
+    would roll a 20 sided dice
+	There is also a dice button which has the most common dice used in D&D, clicking on them will roll 
+    that respective die
+	The players tab is a list of the current players in the session.
+    If all the players in the session leave the session, the session is destroyed (i.e. 0 players in the room)
+

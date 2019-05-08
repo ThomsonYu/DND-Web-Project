@@ -1,0 +1,74 @@
+p {
+	display: inline-block;
+	width: 50%;
+}
+
+#userName{
+	background-color:#343A40;
+	color:white;
+	width: 40%;
+	padding: 10px;
+	text-align: center;
+	margin: 30px auto;
+}
+
+#characterTable {
+	max-width: 650px;
+	margin-left: 15px;
+	border: 2px solid black;
+}
+
+
+#pTable {
+	background-color: #343A40;
+	color:white;
+	width: 50%;
+	max-width: 500px;
+	max-height: 220px;
+	border: 2px solid black;
+}
+
+#charAddBtn{
+	margin-left: 100px;
+}
+
+#infoEditBtn {
+	margin-left: 100px;
+}
+
+#passEditBtn {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+h3 div {
+	background-color:#343A40;
+	color:white;
+	height:63px;
+	width: 200px;
+	padding-top:10px;
+	padding-left:10px;
+	margin-left: 15px;
+}
+
+#popupForm {
+	background-color: #343A40;
+	max-width: 400px;
+	border: 2px solid black;
+	margin-left:15px;
+}
+
+.createChar {
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+}
+
+body {
+	background-color: black;
+	background-image: url("../img/advanced-blank-scroll-paper-powerpoint-backgrounds.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+

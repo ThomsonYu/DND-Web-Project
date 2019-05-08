@@ -1,0 +1,492 @@
+<html lang="en">
+<head>
+    <title>Session</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/sessionStyle.css">
+</head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/lobby">D&D companion</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" id="navList">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lobby">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/userProfile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+						<a class="nav-link" target="_blank" href="/references">References</a>
+                    </li>
+                </ul>
+            </div>
+            <form id="leaveRoomBtn" class="form-inline mt-2 mt-md-0">
+                <a href="/leaveRoom" class="btn btn-secondary">Leave Room</a>
+            </form>
+        </nav>
+
+        <div class="alert alert-secondary" role="alert">
+            <div id="roomName" class="roomInfo">
+            </div>
+            <div id="hostName" class="roomInfo">
+            </div>
+            <div id="numPlayerInfo" class="roomInfo">
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div id="characterInfo" class="col-8 no-float">
+                    <h3>Character Info</h3>
+                    <div id="characterSelect" class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Character
+                        </button>
+                        <div id="characterDropDown" class="dropdown-menu">
+                        </div>
+                    </div>
+                    <div id="characterInfoBox" class="border border-dark">
+                        <div class="tab-bar tab-black">
+                            <button class="tab-bar-item tab-button characterLink tab-selected" onclick="openSessionTab(event, 'characterTab', 'statsTab', 'characterLink')">Character Stats</button>
+                        </div>
+
+                        <div id="statsTab" class="characterTab">
+                            <div class="cStatsRow">
+                                <!-- Character Name -->
+                                <div class="col-sm-2 cStatsCol border-right-0 border-dark">
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Character Name</u></strong>
+                                            <br>
+                                            <p id="cNameTitle"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Character Class Info -->
+                                <div class="col-sm-10 cStatsCol border-dark">
+                                    <!-- Row 1 -->
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-3 cStats">
+                                            <strong><u>Level</u></strong>
+                                            <br>
+                                            <p id="cLevel"></p>
+                                        </div>
+                                        <div class="col-sm-2 cStats">
+                                            <strong><u>Class</u></strong>
+                                            <br>
+                                            <p id="cClass"></p>
+                                        </div>
+                                        <div class="col-sm-2 cStats">
+                                            <strong><u>Race</u></strong>
+                                            <br>
+                                            <p id="cRace"></p>
+                                        </div>
+                                        <div class="col-sm-3 cStats">
+                                            <strong><u>Alignment</u></strong>
+                                            <br>
+                                            <p id="cAlign"></p>
+                                        </div>
+                                    </div>
+                                    <!-- Row 2 -->
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-3 cStats">
+                                            <strong><u>Background</u></strong>
+                                            <br>
+                                            <p id="cBackground"></p>
+                                        </div>
+                                        <div class="col-sm-2 cStats">
+                                            <strong><u>Languages</u></strong>
+                                            <br>
+                                            <p id="cLanguages"></p>
+                                        </div>
+                                        <div class="col-sm-2 cStats">
+                                            <strong><u>Gender</u></strong>
+                                            <br>
+                                            <p id="cGender"></p>
+                                        </div>
+                                        <div class="col-sm-3 cStats">
+                                            <strong><u>Experience Points</u></strong>
+                                            <br>
+                                            <p id="cExp"></p>
+                                            <button class="btn btn-outline-light btn-sm minus" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm plus" onclick="charPlus(event)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Character Stat Values -->
+                            <div class="cStatsRow">
+                                <!-- 2nd row 1st column -->
+                                <div class="col-sm-2 cStatsCol border-top-0 border-right-0 border-dark">
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Strength</u></strong>
+                                            <br>
+                                            <p id="cStrength"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                        <div class="col cStats">
+                                            <strong><u>Dexterity</u></strong>
+                                            <br>
+                                            <p id="cDexterity"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                        <div class="col cStats">
+                                            <strong><u>Constitution</u></strong>
+                                            <br>
+                                            <p id="cConstitution"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                        <div class="col cStats">
+                                            <strong><u>Intelligence</u></strong>
+                                            <br>
+                                            <p id="cIntelligence"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                        <div class="col cStats">
+                                            <strong><u>Wisdom</u></strong>
+                                            <br>
+                                            <p id="cWisdom"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                        <div class="col cStats">
+                                            <strong><u>Charisma</u></strong>
+                                            <br>
+                                            <p id="cCharisma"></p>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charMinus(event)">-</button>
+                                            <button class="btn btn-outline-light btn-sm" onclick="charPlus(event)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2nd row 2nd column -->
+                                <div class="col-sm-4 cStatsCol border-top-0 border-right-0 border-dark">
+                                    <!-- Saving Throws -->
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Saving Throws</u></strong>
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTStr" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            STR
+                                        </div>
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTInt" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            INT
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTDex" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            DEX
+                                        </div>
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTWis" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            WIS
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow border-bottom border-dark">
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTCon" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            CON
+                                        </div>
+                                        <div class="col-sm-5 cStats cThrow">
+                                            <input id="cSTCha" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            CHA
+                                        </div>
+                                    </div>
+
+                                    <!-- Skills -->
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Skills</u></strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKAcrobatics" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            Acrobatics (DEX)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKAniHand" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            Animal Handling (WIS)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKArcana" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            Arcana (INT)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKAthletics" type="checkbox">
+                                            <div class="skillMod"></div>
+                                            Athletics (STR)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKDeception" type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Deception (CHA)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKHistory"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            History (INT)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKInsight"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Insight (WIS)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKIntimidation"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Intimidation (CHA)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKInvestigation"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Investigation (INT)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKMedicine"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Medicine (WIS)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKNature"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Nature (INT)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKPerception"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Perception (WIS)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKPerformance"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Performance (CHA)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKPersuasion"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Persuasion (CHA)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKReligion"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Religion (Int)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKSlHand"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Sleight of Hand (DEX)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKStealth"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Stealth (DEX)
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cSKSurvival"type="checkbox">
+                                            <div  class="skillMod"></div>
+                                            Survival (WIS)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2nd row 3rd column -->
+                                <div class="col-sm-4 cStatsCol border-top-0 border-right-0 border-dark">
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-5 cStats">
+                                            <strong><u>Maximum Hitpoints</u></strong>
+                                            <br>
+                                            <input class="smallNumberInput form-control" type="text" id="cMaxHP">
+                                            <br>
+                                        </div>
+                                        <div class="col-sm-5 cStats">
+                                            <strong><u>Current Hitpoints</u></strong>
+                                            <br>
+                                            <input class="smallNumberInput form-control" type="text" id="cCurHP">
+                                            <br>
+                                        </div>
+                                        <div class="col-sm-5 cStats">
+                                            <strong><u>Temporary Hitpoints</u></strong>
+                                            <br>
+                                            <input class="smallNumberInput form-control" type="text" id="cTempHP">
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col-sm-5 cStats">
+                                            <strong><u>Proficiency Bonus</u></strong>
+                                            <br>
+                                            <input class="smallNumberInput form-control" type="text" id="cProfBonus">
+                                            <br>
+                                        </div>
+                                        <div id="cIntiative" class="col-sm-5 cStats">
+                                            <strong><u>Intiative</u></strong>
+                                            <br>
+                                            <input class="smallNumberInput form-control" readonly type="text" id="cIntiative">
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Proficiencies</u></strong>
+                                            <br>
+                                            <p id="cProficiencies"></p>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2nd row 4th column -->
+                                <div class="col-sm-2 cStatsCol border-top-0 border-dark">
+                                    <div class="cInnerRow">
+                                        <div class="col cStats">
+                                            <strong><u>Armor Class</u></strong>
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cArmorClass">
+                                                <input class="smallNumberInput form-control" type="text" id="cArmor">
+                                                Armor
+                                            </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cArmorClass">
+                                            <input class="smallNumberInput form-control" type="text" id="cShield">
+                                            Shield
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cSkill">
+                                            <input id="cACMedium" type="checkbox"> 
+                                            Medium
+                                        </div>
+                                        <div class="col cStats cSkill">
+                                            <input id="cACHeavy" type="checkbox">
+                                            Heavy
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cArmorClass">
+                                            <input class="smallNumberInput form-control" readonly type="text" id="cArmorDex">
+                                            Dex
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cArmorClass">
+                                            <input class="smallNumberInput form-control" type="text" id="cMagic">
+                                            Magic
+                                        </div>
+                                    </div>
+                                    <div class="cInnerRow">
+                                        <div class="col cStats cArmorClass">
+                                            <input class="smallNumberInput form-control" type="text" id="cMisc">
+                                            Misc
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chat" class="col-4 no-float">
+                    <h3>Chat</h3>
+                    <div id="chatBox" class="border border-dark">
+                        <div class="tab-bar tab-black">
+                            <button class="tab-bar-item tab-button chatLink tab-selected" onclick="openSessionTab(event, 'chatTabs', 'chatTab', 'chatLink')">Chat</button>
+                            <button class="tab-bar-item tab-button chatLink" onclick="openSessionTab(event, 'chatTabs', 'playersTab', 'chatLink')">Players</button>
+                        </div>
+                        <div id="chatTab" class="chatTabs">
+                        </div>
+                        <div id="playersTab" class="chatTabs">
+                        </div>
+                    </div>
+                    <div id="chatMessageBox" class="border border-top-0 border-dark">
+                        <div class="col-md-12" id="userMessage">
+                            <div class="input-group">
+                                <input id="messageInput" type="text" class="form-control" placeholder="Message">
+                                <div class="dropup">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dice
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d20')">D20</a>
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d12')">D12</a>
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d10')">D10</a>
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d8')">D8</a>
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d6')">D6</a>
+                                        <a class="dropdown-item" href="#" onclick="rollDieButton('/r 1d4')">D4</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/session.js"> </script>
+</html>

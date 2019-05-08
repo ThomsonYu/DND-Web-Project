@@ -1,0 +1,118 @@
+ <html lang="en">
+
+	
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/userProfile.css">
+  <head>
+    <title>User Profile</title>
+    <meta charset="utf-8">
+     
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/lobby">D&D companion</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link" href="/lobby">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/userProfile">Profile</a>
+				</li>
+				</li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/references" target="_blank">References</a>
+			  </li> 
+			</ul>
+		  </div> 
+			<form id="logOutBtn" class="form-inline mt-2 mt-md-0">
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>
+            </form>
+		</nav>
+	<div id="userName"><h2>MineCraftGod2</h2></div>
+	<br>
+	<br>
+	<div class="container">
+		<div class = "row">
+			<div id="popUp" class="col-xs-8">
+				<h3><div id="cList" >Character List</div></h3>
+				<div>
+					<table class="table table-dark table-responsive-lg" id="characterTable">
+						  <thead class="thead-dark">
+							<tr>
+							  <th scope="col">#</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Class</th>
+							  <th scope="col">Level</th>
+							 
+							  <th scope="col">Last Viewed</th>
+							  <th scope="col">Edit</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							  <th scope="row">18519263</th>
+							  <td>Nexus</td>
+							  <td>Sorceror</td>
+							  <td>20</td>
+						
+							  <td>Yesterday</td>
+							  <td><input class="staticChar btn-primary mb-4" type="submit" value="Edit"></td>
+							</tr>
+							<tr>
+							  <th scope="row">12351235</th>
+							  <td>Norman</td>
+							  <td>Paladin</td>
+							  <td>13</td>
+						
+							  <td>2 Years Ago</td>
+							  <td><input class="staticChar btn-primary mb-4" type="submit" value="Edit"></td>
+							</tr>
+							<tr>
+							  <th scope="row">11235135</th>
+							  <td>Nate</td>
+							  <td>Fighter</td>
+							  <td>1</td>
+					
+							  <td>5 Hours Ago</td>
+							  <td><input class="staticChar btn-primary mb-4" type="submit" value="Edit"></td>
+							</tr>
+						  </tbody>
+						</table>
+
+				</div>
+
+			
+			<input type="submit" class="btn btn-primary mb-4" value="Add new Character" onclick="popupAddCharacter()">
+			<input type="submit" class="btn btn-secondary mb-4" value="Delete Character" onclick="popupDeleteCharacter()">
+			</div>
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-3 mx-md-5">
+				<h3><div id="pInfo">Personal Info</div></h3>
+				<div id="pTable" class = "row py-md-3 ml-3">
+					<div class="col col-th"><p>First Name:</p>
+							<p>Last Name:</p>
+							<p>Email:</p>
+							<p>Tokens:</p>
+							</div>
+					<div class="col" contenteditable="true">
+							<p>John</p>
+							<p>Smith</p>
+							<p>johnsmith@gmail.com</p>
+							<p>54</p>
+							</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/userProfile.js"> </script>
+</body>
+</html>

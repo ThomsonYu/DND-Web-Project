@@ -1,0 +1,389 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Character Sheet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/editCharacterSheet.css">
+	</head>
+	<body class="characterSheetBody">
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			<!-- Brand -->
+			<a class="navbar-brand" href="/lobby">D&D companion</a>
+
+			<!-- Toggler/collapsibe Button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar links -->
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/lobby">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/userProfile">Profile</a>
+					</li>
+					</li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/references" target="_blank">References</a>
+			  </li> 
+			</ul>
+		  </div> 
+			<form id="logOutBtn" class="form-inline mt-2 mt-md-0">
+                <a href="/users/logout" class="btn btn-secondary">Logout</a>
+            </form>
+		</nav>
+		<div class="container">
+			<form>
+				<div id="pageHeader">
+					<h1> Edit Character </h1>
+				</div>
+				<div id="savebtn" class="col-sm-12">
+					<a href="#" class="btn-lg btn-primary">Save character</a>
+				</div>
+				<div id="characterBio" class="row">
+					<div id="characterNameTitle" class="col-sm-3 formbackground">
+						<span>Character Name: </span>
+						<input class="form-control" id="charName" type="text"> </input>
+					</div>
+					<div id="characterOtherTitle" class="col-sm-8 formbackground">
+						<div class="smallStatTitle">
+							<span>Level</span>
+							<input class="form-control smallNumberInput" id="charLevel" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Class</span>
+							<input class="form-control" id="charClass" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Race</span>
+							<input class="form-control" id="charRace" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Alignment</span>
+							<input class="form-control" id="charAlign" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Background</span>
+							<input class="form-control" id="charBackground" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Languages</span>
+							<input class="form-control" id="charLanguages" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Experience</span>
+							<input class="form-control" id="charExp" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Gender</span>
+							<input class="form-control" id="charSex" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Size</span>
+							<input class="form-control smallNumberInput" id="charSize" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Height</span>
+							<input class="form-control smallNumberInput" id="charHeight" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Weight</span>
+							<input class="form-control smallNumberInput" id="charWeight" type="text"></input>
+						</div>
+						<div class="smallStatTitle">
+							<span>Speed</span>
+							<input class="form-control smallNumberInput" id="charSpeed" type="text"></input>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<div id="characterStats" class="formbackground">
+							<h4 class="text-center">Stats</h4>
+							<div>
+								<span class="statName">STRENGTH</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control" id="charSTR" type="text"></input>
+							</div>
+							<div>
+								<span class="statName">DEXTERITY</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control" id="charDEX" type="text"></input>
+							</div>
+							<div>
+								<span class="statName">CONSTITUTION</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control" id="charCON" type="text"></input>
+							</div>
+							<div>
+								<span class="statName">INTELLIGENCE</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control" id="charINT" type="text"></input>
+							</div>
+							<div>
+								<span class="statName">WISDOM</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control"t id="charWIS" type="text"></input>
+							</div>
+							<div>
+								<span class="statName">CHARISMA</span>
+								<span class="modifier"></span>
+								<input class="smallNumberInput form-control" id="charCHA" type="text"></input>
+							</div>
+						</div>
+						<div id="characterSkillsSaves">
+							<div id="characterSaves" class="formbackground">
+								<h5 class="text-center">Saving Throws</h5>
+								<ul class="row">
+									<li class="skill col-xs-12 col-sm-6" id="saveSTR">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">STR</span>
+									</li>
+									<li class="skill col-xs-12 col-sm-6" id="saveINT">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">INT</span>
+									</li>
+									<li class="skill col-xs-12 col-sm-6" id="saveDEX">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">DEX</span>
+									</li>
+									<li class="skill col-xs-12 col-sm-6" id="saveWIS">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">WIS</span>
+									</li>
+									<li class="skill col-xs-12 col-sm-6" id="saveCON">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">CON</span>
+									</li>
+									<li class="skill col-xs-12 col-sm-6" id="saveCHA">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName">CHA</span>
+									</li>
+								</ul>
+								<div id="characterSavesNotes" class="col-xs-12 form-group">
+									<textarea class="form-control" rows="4"></textarea>
+								</div>
+							</div>
+							<div id="characterSkills" class="formbackground">
+								<h5 class="text-center">Skills</h5>
+								<ul id="characterSkillsTable">
+									<li class="skill" id="acrobatics">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Acrobatics </span>
+										<span class="skillStat grey"> (Dex) </span>
+									</li>
+									<li class="skill" id="animalHandling">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Animal Handling </span>
+										<span class="skillStat grey"> (Wis) </span>
+									</li>
+									<li class="skill" id="arcana">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Arcana </span>
+										<span class="skillStat grey"> (Int) </span>
+									</li>
+									<li class="skill" id="athletics">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Athletics </span>
+										<span class="skillStat grey"> (Str) </span>
+									</li>
+									<li class="skill" id="deception">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Deception </span>
+										<span class="skillStat grey"> (Cha) </span>
+									</li>
+									<li class="skill" id="history">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> History </span>
+										<span class="skillStat grey"> (Int) </span>
+									</li>
+									<li class="skill" id="insight">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Insight </span>
+										<span class="skillStat grey"> (Wis) </span>
+									</li>
+									<li class="skill" id="intimidation">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Intimidation </span>
+										<span class="skillStat grey"> (Cha) </span>
+									</li>
+									<li class="skill" id="investigation">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Investigation </span>
+										<span class="skillStat grey"> (Int) </span>
+									</li>
+									<li class="skill" id="medicine">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Medicine </span>
+										<span class="skillStat grey"> (Wis) </span>
+									</li>
+									<li class="skill" id="nature">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Nature </span>
+										<span class="skillStat grey"> (Int) </span>
+									</li>
+									<li class="skill" id="perception">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Perception </span>
+										<span class="skillStat grey"> (Wis) </span>
+									</li>
+									<li class="skill" id="performance">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Performance </span>
+										<span class="skillStat grey"> (Cha) </span>
+									</li>
+									<li class="skill" id="persuasion">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Persuasion </span>
+										<span class="skillStat grey"> (Cha) </span>
+									</li>
+									<li class="skill" id="religion">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Religion </span>
+										<span class="skillStat grey"> (Int) </span>
+									</li>
+									<li class="skill" id="sleightOfHand">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Sleight of Hand </span>
+										<span class="skillStat grey"> (Dex) </span>
+									</li>
+									<li class="skill" id="stealth">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Stealth </span>
+										<span class="skillStat grey"> (Dex) </span>
+									</li>
+									<li class="skill" id="survival">
+										<input type="checkbox">
+										<div class="skillMod"></div>
+										<span class="skillName"> Survival </span>
+										<span class="skillStat grey"> (Wis) </span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<div class="row">
+							<div class="col-sm-12 col-md-7">
+								<div id="characterGeneralInfo" class="formbackground">
+									<div class="row">
+										<div class="smallStatTitle col-sm-4">
+											<span> Maximum Hitpoints </span>
+										</div>
+										<div class="smallStatTitle col-sm-4">
+											<span> Proficiency Bonus </span>
+										</div>
+										<div class="smallStatTitle col-sm-4">
+											<span> Initiative </span>
+										</div>
+										<div class="smallStatTitle col-sm-4">
+											<input class="smallNumberInput form-control" type="text" id="maxhp">
+										</div>
+										<div class="smallStatTitle col-sm-4">
+											<input class="smallNumberInput form-control" type="text" id="proficiency">
+										</div>
+										<div class="smallStatTitle col-sm-4">
+											<input class="smallNumberInput form-control" type="text" readOnly id="initiative">
+										</div>
+										<div class="smallStatTitle col-sm-6">
+											<span> Current Hitpoints </span>
+										</div>
+										<div class="smallStatTitle col-sm-6">
+											<span> Temporary Hitpoints </span>
+										</div>
+										<div class="smallStatTitle col-sm-6">
+											<input class="form-control" type="text" id="currenthp">
+										</div>
+										<div class="smallStatTitle col-sm-6">
+											<input class="form-control" type="text" id="temphp">
+										</div>
+									</div>
+									<div id="proficiencies" class="form-group">
+										<span>Proficiencies</span>
+										<textarea class="form-control" rows="4"></textarea>
+									</div>
+									<div id="characterDefensiveStatsNotes" class="form-group">
+										<textarea class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-5">
+								<div id="armorClassStats" class="formbackground">
+									<div id="armorClass">
+										<h5 class="statName">ARMOR CLASS</h5>
+										<span class="modifier"></span>
+									</div>
+									<div>
+										<input id="armorBonus" class="smallNumberInput form-control" type="text"></input>
+										<span class="armorType">Armor</span>
+									</div>
+									<div>
+										<input id="shieldBonus" class="smallNumberInput form-control"  type="text"></input>
+										<span class="armorType">Shield</span>
+									</div>
+									<div id="armorDexBonus">
+										<div>
+											<input id="mediumArmor" type="checkbox">
+											<span class="smallCheckBoxSpan">Medium</span>
+											<input id="heavyArmor" type="checkbox">
+											<span class="smallCheckBoxSpan">Heavy</span>
+										</div>
+										<input class="smallNumberInput form-control" readonly id="dexBonus"></input>
+										<span class="armorType">Dex</span>
+									</div>
+									<div>
+										<input id="magicArmorBonus" class="smallNumberInput form-control" type="text">
+										<span class="armorType">Magic</span>
+									</div>
+									<div>
+										<input id="miscArmorBonus" class="smallNumberInput form-control" type="text">
+										<span class="armorType">Misc</span>
+									</div>
+									<div id="armorNotes" class="form-group">
+										<textarea class="form-control" rows="4"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div id="notesNotes" class="formbackground form-group">
+									<h5 class="statName">Notes</h5>
+									<textarea class="form-control"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="/js/editCharacterSheet.js"></script>
+	</body>
+</html>

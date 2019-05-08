@@ -1,0 +1,220 @@
+/* Chat CSS */
+html,body{
+    height:100%;
+}
+
+body{
+    background-color: black;
+}
+
+.container-fluid{
+    margin-top: -40px;
+    padding: 25px 0 0 0;
+    height: 90%;
+    width:100%;
+    display: table;
+    box-sizing: border-box;
+}
+
+/* Nav Bar */
+#leaveroomBtn{
+    margin: 0;
+}
+
+.roomInfo{
+    display: inline-block;
+    padding-left: 20px;
+}
+
+h3 {
+    color: white;
+    display: inline-block;
+}
+
+p {
+    color: white;
+}
+
+/* Character Info */
+.row{
+    height: 100%;
+    display: table-row;
+}
+
+.row .no-float {
+    display: table-cell;
+    float:none;
+}
+
+.tab-bar{
+    width:100%;
+    overflow:hidden
+}
+
+.tab-black,.tab-hover-black:hover{
+    color:#fff!important;
+    background-color:#343a40!important
+}
+
+.tab-bar .tab-bar-item{
+    padding:8px 16px;
+    float:left;
+    width:auto;
+    border:none;
+    display:block;
+    outline:0;
+}
+
+.tab-bar .tab-button{
+    white-space:normal;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-button:hover{
+    color:#343a40!important;
+    background-color:#ccc!important
+}
+
+.tab-selected,.tab-hover-selected:hover{
+    color:#fff!important;
+    background-color:#6c757d!important
+}
+
+#characterSelect{
+    display: inline-block;
+}
+
+/* Character Info Column*/
+#statsTab{
+    display: block;
+    overflow: auto;
+    max-height: 70vh;
+    color: white;
+}
+
+.cStatsRow{
+    width: inherit;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.cStatsCol{
+    flex: 1;
+    border-style: solid;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cInnerRow{
+    vertical-align: top;
+    text-align: center;
+}
+
+.cStats{
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.cStats .btn{
+    vertical-align: top;
+}
+
+.skillMod{
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+    color: yellow;
+}
+
+.cThrow{
+    padding: 5px;
+}
+
+.cSkill{
+    text-align: left;
+    padding: 0px;
+}
+
+.cSkill .skillMod{
+    width: 10%;
+}
+
+.smallNumberInput{
+    width: 70%;
+    display: inline-block;
+}
+
+.cArmorClass{
+    text-align: left;
+}
+
+/* Chat Column*/
+#chatTab{
+    display: block;
+    overflow: auto;
+    word-wrap: break-word;
+    max-width: 80vh;
+    max-height: 65vh;
+}
+
+#playersTab{
+    display: none;
+    overflow: auto;
+    max-height: 70vh;
+}
+
+/* Tab Sizing and background color */
+#characterInfo{
+    width: 60%;
+}
+
+#characterInfoBox{
+    height: 90%;
+    background-color: #6c757d;
+}
+
+#chatBox{
+    height: 80%;
+    max-width: 100%;
+    max-height: 80%;
+    background-color: #6c757d;
+}
+
+#chatMessageBox{
+    height: 10%;
+    max-height: 70vh;
+    background-color: #6c757d;
+}
+
+#userMessage{
+    width: 90%;
+    padding: 15px !important;
+}
+
+.dropup{
+    left: 20px;
+}
+
+.messageContainer{
+    padding: 10px;
+}
+
+.playerInfo{
+    display: inline-block;
+    padding: 10px;
+}
+
+.kickPlayer{
+    position: relative;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
