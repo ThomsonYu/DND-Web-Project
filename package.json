@@ -16,8 +16,9 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "handlebars": "^4.1.2",
-    "hbs": "^4.0.1",
+    "hbs": "^4.0.4",
     "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.14",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.12",
     "validator": "^10.9.0"
